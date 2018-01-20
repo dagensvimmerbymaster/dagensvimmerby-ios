@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A38C1C72045EECA004335B2 /* DagensvimmerbyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A38C1C62045EECA004335B2 /* DagensvimmerbyInfo.plist */; };
+		3A38C1C92045EF2B004335B2 /* DagenshultsfredInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A38C1C82045EF2B004335B2 /* DagenshultsfredInfo.plist */; };
+		3A4B51DC200A6877005D77DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B51DB200A6876005D77DE /* Assets.xcassets */; };
+		3A4D4B0D2004116600BA853F /* LaunchScreenDH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D4B0C2004116600BA853F /* LaunchScreenDH.storyboard */; };
+		3A747AED20012D63002C56C7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52CABE01DD08A39005C1AF1 /* Alert.swift */; };
+		3A747AEE20012D63002C56C7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53944381DBF5C1F00D404BA /* WebViewController.swift */; };
+		3A747AEF20012D63002C56C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53944361DBF5C1F00D404BA /* AppDelegate.swift */; };
+		3A747AF120012D63002C56C7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EF41DC10FB200C6146F /* AudioToolbox.framework */; };
+		3A747AF220012D63002C56C7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EF21DC10FA700C6146F /* CFNetwork.framework */; };
+		3A747AF320012D63002C56C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EF01DC10F9B00C6146F /* CoreGraphics.framework */; };
+		3A747AF420012D63002C56C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EEE1DC10F8E00C6146F /* CoreLocation.framework */; };
+		3A747AF520012D63002C56C7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EEC1DC10F8400C6146F /* QuartzCore.framework */; };
+		3A747AF620012D63002C56C7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EEA1DC10F7A00C6146F /* Security.framework */; };
+		3A747AF720012D63002C56C7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EE81DC10F6E00C6146F /* StoreKit.framework */; };
+		3A747AF820012D63002C56C7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EE61DC10F6000C6146F /* SystemConfiguration.framework */; };
+		3A747AF920012D63002C56C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EE41DC10F5600C6146F /* libz.tbd */; };
+		3A747AFA20012D63002C56C7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EE21DC10F4D00C6146F /* libsqlite3.tbd */; };
+		3A747AFB20012D63002C56C7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EDF1DC10EEB00C6146F /* Parse.framework */; };
+		3A747AFC20012D63002C56C7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EDE1DC10EEB00C6146F /* Bolts.framework */; };
+		3A747B0020012D63002C56C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539443A1DBF5C1F00D404BA /* Main.storyboard */; };
+		3A9670E6200A6A9700EF6645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B51DB200A6876005D77DE /* Assets.xcassets */; };
 		C52CABE11DD08A39005C1AF1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52CABE01DD08A39005C1AF1 /* Alert.swift */; };
 		C5368EE01DC10EEB00C6146F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EDE1DC10EEB00C6146F /* Bolts.framework */; };
 		C5368EE11DC10EEB00C6146F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5368EDF1DC10EEB00C6146F /* Parse.framework */; };
@@ -23,11 +44,15 @@
 		C53944371DBF5C1F00D404BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53944361DBF5C1F00D404BA /* AppDelegate.swift */; };
 		C53944391DBF5C1F00D404BA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53944381DBF5C1F00D404BA /* WebViewController.swift */; };
 		C539443C1DBF5C1F00D404BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539443A1DBF5C1F00D404BA /* Main.storyboard */; };
-		C539443E1DBF5C1F00D404BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C539443D1DBF5C1F00D404BA /* Assets.xcassets */; };
 		C53944411DBF5C1F00D404BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539443F1DBF5C1F00D404BA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A38C1C62045EECA004335B2 /* DagensvimmerbyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DagensvimmerbyInfo.plist; sourceTree = "<group>"; };
+		3A38C1C82045EF2B004335B2 /* DagenshultsfredInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DagenshultsfredInfo.plist; sourceTree = "<group>"; };
+		3A4B51DB200A6876005D77DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A4D4B0C2004116600BA853F /* LaunchScreenDH.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenDH.storyboard; sourceTree = "<group>"; };
+		3A747B0420012D63002C56C7 /* Dagens Hultsfred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dagens Hultsfred.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C52CABE01DD08A39005C1AF1 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C5368EDC1DC0F14400C6146F /* Dagensvimmerby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dagensvimmerby.entitlements; sourceTree = "<group>"; };
 		C5368EDE1DC10EEB00C6146F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -42,16 +67,33 @@
 		C5368EF01DC10F9B00C6146F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C5368EF21DC10FA700C6146F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C5368EF41DC10FB200C6146F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		C53944331DBF5C1F00D404BA /* Dagensvimmerby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dagensvimmerby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C53944331DBF5C1F00D404BA /* Dagens Vimmerby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dagens Vimmerby.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53944361DBF5C1F00D404BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53944381DBF5C1F00D404BA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C539443B1DBF5C1F00D404BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C539443D1DBF5C1F00D404BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C53944401DBF5C1F00D404BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C53944421DBF5C1F00D404BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A747AF020012D63002C56C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A747AF120012D63002C56C7 /* AudioToolbox.framework in Frameworks */,
+				3A747AF220012D63002C56C7 /* CFNetwork.framework in Frameworks */,
+				3A747AF320012D63002C56C7 /* CoreGraphics.framework in Frameworks */,
+				3A747AF420012D63002C56C7 /* CoreLocation.framework in Frameworks */,
+				3A747AF520012D63002C56C7 /* QuartzCore.framework in Frameworks */,
+				3A747AF620012D63002C56C7 /* Security.framework in Frameworks */,
+				3A747AF720012D63002C56C7 /* StoreKit.framework in Frameworks */,
+				3A747AF820012D63002C56C7 /* SystemConfiguration.framework in Frameworks */,
+				3A747AF920012D63002C56C7 /* libz.tbd in Frameworks */,
+				3A747AFA20012D63002C56C7 /* libsqlite3.tbd in Frameworks */,
+				3A747AFB20012D63002C56C7 /* Parse.framework in Frameworks */,
+				3A747AFC20012D63002C56C7 /* Bolts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C53944301DBF5C1E00D404BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,7 +147,8 @@
 		C53944341DBF5C1F00D404BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C53944331DBF5C1F00D404BA /* Dagensvimmerby.app */,
+				C53944331DBF5C1F00D404BA /* Dagens Vimmerby.app */,
+				3A747B0420012D63002C56C7 /* Dagens Hultsfred.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +156,8 @@
 		C53944351DBF5C1F00D404BA /* Dagensvimmerby */ = {
 			isa = PBXGroup;
 			children = (
+				3A38C1C82045EF2B004335B2 /* DagenshultsfredInfo.plist */,
+				3A38C1C62045EECA004335B2 /* DagensvimmerbyInfo.plist */,
 				C5368EDC1DC0F14400C6146F /* Dagensvimmerby.entitlements */,
 				C53944491DBF5CF400D404BA /* Helper */,
 				C539444A1DBF5CFC00D404BA /* Model */,
@@ -120,9 +165,9 @@
 				C539444B1DBF5D0300D404BA /* View */,
 				C53944361DBF5C1F00D404BA /* AppDelegate.swift */,
 				C539443A1DBF5C1F00D404BA /* Main.storyboard */,
-				C539443D1DBF5C1F00D404BA /* Assets.xcassets */,
 				C539443F1DBF5C1F00D404BA /* LaunchScreen.storyboard */,
-				C53944421DBF5C1F00D404BA /* Info.plist */,
+				3A4D4B0C2004116600BA853F /* LaunchScreenDH.storyboard */,
+				3A4B51DB200A6876005D77DE /* Assets.xcassets */,
 			);
 			path = Dagensvimmerby;
 			sourceTree = "<group>";
@@ -160,9 +205,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C53944321DBF5C1E00D404BA /* Dagensvimmerby */ = {
+		3A747AEB20012D63002C56C7 /* Dagens Hultsfred */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C53944451DBF5C1F00D404BA /* Build configuration list for PBXNativeTarget "Dagensvimmerby" */;
+			buildConfigurationList = 3A747B0120012D63002C56C7 /* Build configuration list for PBXNativeTarget "Dagens Hultsfred" */;
+			buildPhases = (
+				3A747AEC20012D63002C56C7 /* Sources */,
+				3A747AF020012D63002C56C7 /* Frameworks */,
+				3A747AFD20012D63002C56C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dagens Hultsfred";
+			productName = Dagensvimmerby;
+			productReference = 3A747B0420012D63002C56C7 /* Dagens Hultsfred.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C53944321DBF5C1E00D404BA /* Dagens Vimmerby */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C53944451DBF5C1F00D404BA /* Build configuration list for PBXNativeTarget "Dagens Vimmerby" */;
 			buildPhases = (
 				C539442F1DBF5C1E00D404BA /* Sources */,
 				C53944301DBF5C1E00D404BA /* Frameworks */,
@@ -172,9 +234,9 @@
 			);
 			dependencies = (
 			);
-			name = Dagensvimmerby;
+			name = "Dagens Vimmerby";
 			productName = Dagensvimmerby;
-			productReference = C53944331DBF5C1F00D404BA /* Dagensvimmerby.app */;
+			productReference = C53944331DBF5C1F00D404BA /* Dagens Vimmerby.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,8 +247,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "TUVA Sweden AB";
+				ORGANIZATIONNAME = "Dagens Vimmerby AB";
 				TargetAttributes = {
+					3A747AEB20012D63002C56C7 = {
+						DevelopmentTeam = 5S4Z656PBW;
+					};
 					C53944321DBF5C1E00D404BA = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5S4Z656PBW;
@@ -212,25 +277,48 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C53944321DBF5C1E00D404BA /* Dagensvimmerby */,
+				C53944321DBF5C1E00D404BA /* Dagens Vimmerby */,
+				3A747AEB20012D63002C56C7 /* Dagens Hultsfred */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A747AFD20012D63002C56C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A4D4B0D2004116600BA853F /* LaunchScreenDH.storyboard in Resources */,
+				3A9670E6200A6A9700EF6645 /* Assets.xcassets in Resources */,
+				3A747B0020012D63002C56C7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C53944311DBF5C1E00D404BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A38C1C92045EF2B004335B2 /* DagenshultsfredInfo.plist in Resources */,
 				C53944411DBF5C1F00D404BA /* LaunchScreen.storyboard in Resources */,
-				C539443E1DBF5C1F00D404BA /* Assets.xcassets in Resources */,
+				3A4B51DC200A6877005D77DE /* Assets.xcassets in Resources */,
 				C539443C1DBF5C1F00D404BA /* Main.storyboard in Resources */,
+				3A38C1C72045EECA004335B2 /* DagensvimmerbyInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A747AEC20012D63002C56C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A747AED20012D63002C56C7 /* Alert.swift in Sources */,
+				3A747AEE20012D63002C56C7 /* WebViewController.swift in Sources */,
+				3A747AEF20012D63002C56C7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C539442F1DBF5C1E00D404BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +351,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A747B0220012D63002C56C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-DH";
+				CODE_SIGN_ENTITLEMENTS = Dagensvimmerby/Dagensvimmerby.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5S4Z656PBW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = Dagensvimmerby/DagenshultsfredInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dagensvimmerbyab.DH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3A747B0320012D63002C56C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-DH";
+				CODE_SIGN_ENTITLEMENTS = Dagensvimmerby/Dagensvimmerby.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5S4Z656PBW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = Dagensvimmerby/DagenshultsfredInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dagensvimmerbyab.DH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		C53944431DBF5C1F00D404BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,7 +499,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = Dagensvimmerby/Info.plist;
+				INFOPLIST_FILE = Dagensvimmerby/DagensvimmerbyInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dagensvimmerbyab.DV;
@@ -391,7 +521,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = Dagensvimmerby/Info.plist;
+				INFOPLIST_FILE = Dagensvimmerby/DagensvimmerbyInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dagensvimmerbyab.DV;
@@ -403,6 +533,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A747B0120012D63002C56C7 /* Build configuration list for PBXNativeTarget "Dagens Hultsfred" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A747B0220012D63002C56C7 /* Debug */,
+				3A747B0320012D63002C56C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C539442E1DBF5C1E00D404BA /* Build configuration list for PBXProject "Dagensvimmerby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -412,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C53944451DBF5C1F00D404BA /* Build configuration list for PBXNativeTarget "Dagensvimmerby" */ = {
+		C53944451DBF5C1F00D404BA /* Build configuration list for PBXNativeTarget "Dagens Vimmerby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C53944461DBF5C1F00D404BA /* Debug */,

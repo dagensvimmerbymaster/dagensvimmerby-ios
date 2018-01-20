@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     let parseConfig = ParseClientConfiguration { (ParseMutableClientConfiguration) in
-        ParseMutableClientConfiguration.applicationId = ""
-        ParseMutableClientConfiguration.server = "http://dagensvimmerby.herokuapp.com/parse/"
+        ParseMutableClientConfiguration.applicationId = Bundle.main.infoDictionary!["PARSE_APPID"] as? String
+        ParseMutableClientConfiguration.server = Bundle.main.infoDictionary!["PARSE_SERVERID"] as! String
     }
     
 

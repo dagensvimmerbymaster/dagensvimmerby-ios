@@ -61,7 +61,7 @@ class WebViewController: UIViewController {
     }
     
     var url: URL?
-    var url_name: String = "http://m.dagensvimmerby.se"
+    var url_name: String = Bundle.main.infoDictionary!["WEB_URL"] as! String
     
     //progress var
     @IBOutlet weak var progressView: UIProgressView!

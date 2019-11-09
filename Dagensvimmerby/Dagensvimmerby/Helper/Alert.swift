@@ -14,9 +14,9 @@ class Alert {
         let alertTitle = message
         let alertButtonTitle = "OK"
         
-        let alert = UIAlertController(title: alertTitle, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: alertTitle, message: nil, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: alertButtonTitle, style: UIAlertActionStyle.default, handler: handler))
+        alert.addAction(UIAlertAction(title: alertButtonTitle, style: UIAlertAction.Style.default, handler: handler))
         
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {

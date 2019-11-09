@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Dagens Hultsfred</string>
+	<string>Dagens Västervik</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -40,7 +40,7 @@
 	<key>PARSE_SERVERID</key>
 	<string>http://&lt;herokoappname&gt;.herokuapp.com/parse</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreenDH</string>
+	<string>LaunchScreenDVV</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -59,6 +59,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>WEB_URL</key>
-	<string>http://m.dagenshultsfred.se/</string>
+	<string>http://m.dagensvastervik.se/</string>
 </dict>
 </plist>

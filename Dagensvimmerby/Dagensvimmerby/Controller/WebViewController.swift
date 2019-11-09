@@ -7,42 +7,34 @@
 //
 
 import UIKit
+import WebKit
 import Foundation
 import Parse
 
 class WebViewController: UIViewController {
 
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var wkwvContainer: UIView!
     @IBOutlet weak var goBackButtonItem: UIBarButtonItem!
     @IBOutlet weak var goForwardButtonItem: UIBarButtonItem!
     @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
     @IBOutlet weak var shareButtonItem: UIBarButtonItem!
     
-    var before_stop: Int = 0
-    var before_start: Int = 0
-    var current_stop: Int = 0
-    var current_start: Int = 0
+    var wkWebView: WKWebView!
     
     @IBAction func goBackAction(_ sender: AnyObject) {
-        self.current_stop = 0
-        self.current_start = 0
-        if webView.canGoBack {
-            webView.goBack()
+        if wkWebView.canGoBack {
+            wkWebView.goBack()
         }
     }
     
     @IBAction func goForwardAction(_ sender: AnyObject) {
-        self.current_stop = 0
-        self.current_start = 0
-        if webView.canGoForward {
-            webView.goForward()
+        if wkWebView.canGoForward {
+            wkWebView.goForward()
         }
     }
     
     @IBAction func reloadAction(_ sender: AnyObject) {
-        self.current_stop = 0
-        self.current_start = 0
-        webView.reload()
+        wkWebView.reload()
     }
     
     @IBAction func shareAction(_ sender: Any) {
@@ -51,11 +43,13 @@ class WebViewController: UIViewController {
             if let currentUrl = sharingUrl {
                 sharingItems.append(currentUrl as AnyObject)
             }
-            let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
-            self.present(activityViewController, animated: true, completion: nil)
+            
+            let vc = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+            vc.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
+            self.present(vc, animated: true, completion: nil)
         }
         
-        if let url = self.webView.request?.url?.absoluteString {
+        if let url = self.wkWebView.url?.absoluteString {
             shareURL(sharingUrl: url)
         }
     }
@@ -65,14 +59,53 @@ class WebViewController: UIViewController {
     
     //progress var
     @IBOutlet weak var progressView: UIProgressView!
-    var isLoaded: Bool?
-    var timmer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.webView.delegate = self
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        if #available(iOS 10.0, *) {
+            config.mediaTypesRequiringUserActionForPlayback = .audio
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        wkWebView = WKWebView(frame: wkwvContainer.bounds, configuration: config)
+        wkWebView.navigationDelegate = self
+        wkWebView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        wkwvContainer.addSubview(wkWebView)
+        
+        wkWebView.allowsBackForwardNavigationGestures = true
+        
+        wkWebView.uiDelegate = self
+        wkWebView.navigationDelegate = self
+        
+        let webViewKeyPathsToObserve = ["loading", "estimatedProgress"]
+        for keyPath in webViewKeyPathsToObserve {
+            wkWebView.addObserver(self, forKeyPath: keyPath, options: .new, context: nil)
+        }
         
         self.loadWebData()
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let keyPath = keyPath else { return }
+        
+        switch keyPath {
+            
+        case "loading":
+            goBackButtonItem.isEnabled = wkWebView.canGoBack
+            goForwardButtonItem.isEnabled = wkWebView.canGoForward
+            
+        case "estimatedProgress":
+            goBackButtonItem.isEnabled = wkWebView.canGoBack
+            goForwardButtonItem.isEnabled = wkWebView.canGoForward
+            
+            progressView.isHidden = wkWebView.estimatedProgress == 1
+            progressView.progress = Float(wkWebView.estimatedProgress)
+        default:
+            break
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,9 +124,6 @@ class WebViewController: UIViewController {
         goBackButtonItem.isEnabled = false
         goForwardButtonItem.isEnabled = false
         
-        self.current_start = 0
-        self.current_stop = 0
-        
         if self.initWebData() {
             self.initWebView()
         }
@@ -111,85 +141,45 @@ class WebViewController: UIViewController {
     }
     
     func initWebView () {
-        let request = URLRequest(url: self.url!)
-        self.webView.loadRequest(request)
+        wkWebView.load(URLRequest(url: self.url!))
     }
     
 }
 
-extension WebViewController: UIWebViewDelegate {
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        
-        self.current_start += 1
-        //print(" << Start: \(self.current_start)")
-        if self.current_start == 1 {
-            self.startLoading()
+extension WebViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
         }
+        return nil
+    }
+}
+
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
     }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        self.current_stop += 1
-        //print(" >> Stop:  \(self.current_stop)")
-        if self.current_stop == self.current_start {
-            self.before_start = self.current_start
-            self.before_stop = self.current_stop
-            self.current_stop = 0
-            self.current_start = 0
-            self.stopLoading()
-        }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
     }
     
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        // show error dialog
         if error.localizedDescription == "A server with the specified hostname could not be found." {
             Alert.showFailiureAlert(message: "Sidan kunde inte hittas")
         }
-        self.current_start -= 1
         print(" >>>>>>> \(error.localizedDescription)")
     }
-
 }
 
 extension WebViewController {
-    func startLoading() {
-        if self.progressView.isHidden {
-            self.progressView.isHidden = false
-        }
-        self.progressView.progress = 0.0
-        self.isLoaded = false
-        self.timmer = Timer.scheduledTimer(timeInterval: 0.02667, target: self, selector: #selector(self.timerCallback), userInfo: nil, repeats: true)
-    }
-    func stopLoading() {
-        self.isLoaded = true
-        self.progressView.isHidden = true
-        if webView.canGoBack {
-            goBackButtonItem.isEnabled = true
-        }
-        
-        if webView.canGoForward {
-            goForwardButtonItem.isEnabled = true
-        }
-    }
-    func timerCallback() {
-        if self.isLoaded! {
-            if self.progressView.progress >= 1 {
-                //self.progressView.isHidden = true
-                self.timmer?.invalidate()
-            } else {
-                self.progressView.progress += 0.1
-            }
-        } else {
-            self.progressView.progress += 0.05
-            if self.progressView.progress >= 0.95 {
-                self.progressView.progress = 0.95
-            }
-        }
-    }
     
     func cleanBadge() {
         UIApplication.shared.applicationIconBadgeNumber = 0
         if let installation = PFInstallation.current() {
-            //installation.setDeviceTokenFrom(deviceToken)
             installation.badge = 0
             installation.saveInBackground()
         }

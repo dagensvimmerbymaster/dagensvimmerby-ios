@@ -12,7 +12,8 @@ import Foundation
 import Parse
 
 class WebViewController: UIViewController {
-
+    static let RELOAD_TIME_LIMIT: Double = 15 * 60
+    
     @IBOutlet weak var wkwvContainer: UIView!
     @IBOutlet weak var goBackButtonItem: UIBarButtonItem!
     @IBOutlet weak var goForwardButtonItem: UIBarButtonItem!
@@ -20,6 +21,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var shareButtonItem: UIBarButtonItem!
     
     var wkWebView: WKWebView!
+    var backgroundTimeStamp: TimeInterval = 0
     
     @IBAction func goBackAction(_ sender: AnyObject) {
         if wkWebView.canGoBack {
@@ -62,6 +64,17 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(applicationDidBecomeActive),
+        name: UIApplication.didBecomeActiveNotification,
+        object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(applicationDidEnterBackground),
+        name: UIApplication.didEnterBackgroundNotification,
+        object: nil)
+        
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         if #available(iOS 10.0, *) {
@@ -88,6 +101,21 @@ class WebViewController: UIViewController {
         self.loadWebData()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+    
+    @objc fileprivate func applicationDidEnterBackground() {
+        backgroundTimeStamp = NSDate().timeIntervalSince1970
+    }
+    
+    @objc fileprivate func applicationDidBecomeActive() {
+        if (backgroundTimeStamp > 0 && (backgroundTimeStamp+WebViewController.RELOAD_TIME_LIMIT) <= NSDate().timeIntervalSince1970) {
+            self.loadWebData()
+        }
+    }
+
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard let keyPath = keyPath else { return }
         

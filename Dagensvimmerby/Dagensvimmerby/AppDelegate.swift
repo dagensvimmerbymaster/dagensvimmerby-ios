@@ -34,7 +34,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         Parse.initialize(with: self.parseConfig)
         
+        //print(isDevelopmentEnvironment().description ?? "none")
+        
         return true
+    }
+    
+    func isDevelopmentEnvironment() -> Bool {
+        guard let filePath = Bundle.main.path(forResource: "embedded", ofType:"mobileprovision") else {
+            return false
+        }
+        do {
+            let url = URL(fileURLWithPath: filePath)
+            let data = try Data(contentsOf: url)
+            guard let string = String(data: data, encoding: .ascii) else {
+                return false
+            }
+            if string.contains("<key>aps-environment</key>\n\t\t<string>development</string>") {
+                return true
+            }
+        } catch {}
+        return false
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

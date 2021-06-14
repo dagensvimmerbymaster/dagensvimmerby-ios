@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Dagens Vimmerby</string>
+	<string>Dagens Kalmar</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -40,17 +40,17 @@
 	<key>PARSE_SERVERID</key>
 	<string>http://herokoappname.herokuapp.com/parse</string>
 	<key>SUPPORTER_BODY_TEXT</key>
-	<string>Dagens Vimmerby är en lokalt ägd dagstidning som drivs av Jakob Karlsson, Simon Henriksson och Linus Johansson. Till skillnad från många andra i branschen har vi valt att inte låsa in några artiklar bakom betalväggar. Vi vill att alla medborgare i Vimmerby kommun ska ha samma rätt till sin moderna dagstidning med cirka 20 artiklar varje dag året om. Vill du hjälpa oss att bli ännu bättre? I så fall kan du bli DV-supporter.</string>
+	<string>Dagens Kalmar är en lokalt ägd dagstidning som drivs av Dagens Kalmar AB. Till skillnad från många andra i branschen har vi valt att inte låsa in några artiklar bakom betalväggar. Vi vill att alla medborgare i Kalmar kommun ska ha samma rätt till lokala nyheter. Vill du hjälpa oss att bli ännu bättre? I så fall kan du bli DK-supporter.</string>
 	<key>SUPPORTER_IMAGE_NAME</key>
-	<string>SupporterDV</string>
+	<string>SupporterDK</string>
 	<key>SUPPORTER_PATH</key>
-	<string>dv-supporter</string>
+	<string>dk-supporter</string>
 	<key>SUPPORTER_TITLE_TEXT</key>
-	<string>Bli DV Supporter!</string>
+	<string>Bli DK Supporter!</string>
 	<key>SUPPORTER_TITLE_TEXT_DONE</key>
-	<string>Tack för att du är DV Supporter!</string>
+	<string>Tack för att du är DK Supporter!</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreenDK</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -69,6 +69,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>WEB_URL</key>
-	<string>http://m.dagensvimmerby.se/</string>
+	<string>http://m.dagenskalmar.nu/</string>
 </dict>
 </plist>

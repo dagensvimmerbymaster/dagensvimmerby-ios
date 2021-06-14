@@ -38,7 +38,17 @@
 	<key>PARSE_APPID</key>
 	<string>id-parseAppID</string>
 	<key>PARSE_SERVERID</key>
-	<string>http://&lt;herokoappname&gt;.herokuapp.com/parse</string>
+	<string>http://herokoappname.herokuapp.com/parse</string>
+	<key>SUPPORTER_BODY_TEXT</key>
+	<string>Dagens Västervik är en lokalt ägd dagstidning som drivs av Dagens Vimmerby AB och Mediapartner AB. Till skillnad från många andra i branschen har vi valt att inte låsa in några artiklar bakom betalväggar. Vi vill att alla medborgare i Västervik kommun ska ha samma rätt till sin moderna dagstidning med cirka 20 artiklar varje dag året om. Vill du hjälpa oss att bli ännu bättre? I så fall kan du bli DVV-supporter.</string>
+	<key>SUPPORTER_IMAGE_NAME</key>
+	<string>SupporterDVV</string>
+	<key>SUPPORTER_PATH</key>
+	<string>dvv-supporter</string>
+	<key>SUPPORTER_TITLE_TEXT</key>
+	<string>Bli DVV Supporter!</string>
+	<key>SUPPORTER_TITLE_TEXT_DONE</key>
+	<string>Tack för att du är DVV Supporter!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreenDVV</string>
 	<key>UIMainStoryboardFile</key>

@@ -58,6 +58,7 @@ class WebViewController: UIViewController {
     
     var url: URL?
     var url_name: String = Bundle.main.infoDictionary!["WEB_URL"] as! String
+    var support_path: String = Bundle.main.infoDictionary!["SUPPORTER_PATH"] as! String
     
     //progress var
     @IBOutlet weak var progressView: UIProgressView!
@@ -172,6 +173,12 @@ class WebViewController: UIViewController {
         wkWebView.load(URLRequest(url: self.url!))
     }
     
+    func navigateSupporter() {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "supporterVC") as? SupporterViewController
+        {
+            present(vc, animated: true, completion: nil)
+        }
+    }
 }
 
 extension WebViewController: WKUIDelegate {
@@ -188,6 +195,22 @@ extension WebViewController: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.navigationType == WKNavigationType.linkActivated {
+            if let url = navigationAction.request.url,
+               let path = url.absoluteString.split(separator: "/").last,
+               path.contains(support_path) {
+                print(url)
+                print("Open it in app!")
+                navigateSupporter()
+                decisionHandler(.cancel)
+            } else {
+                print("Open it locally")
+                decisionHandler(.allow)
+            }
+            return
+        }
+        //print("no link")
+                
         decisionHandler(.allow)
     }
     

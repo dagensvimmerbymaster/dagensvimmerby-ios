@@ -38,7 +38,17 @@
 	<key>PARSE_APPID</key>
 	<string>id-parseAppID</string>
 	<key>PARSE_SERVERID</key>
-	<string>http://&lt;herokoappname&gt;.herokuapp.com/parse</string>
+	<string>http://herokoappname.herokuapp.com/parse</string>
+	<key>SUPPORTER_BODY_TEXT</key>
+	<string>Dagens Hultsfred är en lokalt ägd dagstidning som drivs av Jakob Karlsson, Simon Henriksson och Linus Johansson. Till skillnad från många andra i branschen har vi valt att inte låsa in några artiklar bakom betalväggar. Vi vill att alla medborgare i Hultsfred kommun ska ha samma rätt till sin moderna dagstidning med cirka 20 artiklar varje dag året om. Vill du hjälpa oss att bli ännu bättre? I så fall kan du bli DH-supporter.</string>
+	<key>SUPPORTER_IMAGE_NAME</key>
+	<string>SupporterDH</string>
+	<key>SUPPORTER_PATH</key>
+	<string>dh-supporter</string>
+	<key>SUPPORTER_TITLE_TEXT</key>
+	<string>Bli DH Supporter!</string>
+	<key>SUPPORTER_TITLE_TEXT_DONE</key>
+	<string>Tack för att du är DH Supporter!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreenDH</string>
 	<key>UIMainStoryboardFile</key>
